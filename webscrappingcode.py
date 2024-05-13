@@ -19,7 +19,7 @@ date_posted = [date.text for date in soup.find_all("div", class_="css-4c4ojb")]
 
 jobs_data = zip(job_titles, locations, company_names, job_skills, date_posted )
 
-
+#Naming The Excel sheet columns
 df = pd.DataFrame({
     "Job Title": job_titles,
     "Location": locations,
@@ -29,7 +29,7 @@ df = pd.DataFrame({
  
 })
 
-file_path = r"C:\Users\WG\Documents\jobs.xlsx" # Change this to your desired path
+file_path = r"C:\Users\WG\Documents\jobs.xlsx" 
 # Save the DataFrame to an Excel file
 df.to_excel(file_path, index=False)
 
